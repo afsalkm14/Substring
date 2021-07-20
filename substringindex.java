@@ -13,13 +13,13 @@ public class substringindex
 		HashMap<Integer,
 				Integer> map = new HashMap<>();
 
-		
+		//at first makr curr_power as zero
 		int curr_power = 0;
 		int len = str.length();
 
 		for (int i = 0; i < len; i++)
 		{
-
+                        //if we find curr_power equal power at first then we found the substring 
 			curr_power = curr_power + (str.charAt(i) - 'a' + 1);
 			if (curr_power == power)
 			{
@@ -28,7 +28,7 @@ public class substringindex
 				System.out.println(str.substring(0, i+1));
 				return;
 			}
-
+                        //if substring is alredy existing then also we find substring
 			if (map.containsKey(curr_power - power))
 			{
 				System.out.println("Substring from index " +
@@ -40,11 +40,11 @@ public class substringindex
 
 			map.put(curr_power, i);
 		}
-
+               //if the substring is not founf
 		System.out.println("No substring with given power exists.");
 	}
 
-	
+	//Main Code
 	public static void main(String[] args)
 	{
 	    Scanner sc = new Scanner(System.in);  
